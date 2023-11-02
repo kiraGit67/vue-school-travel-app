@@ -5,7 +5,10 @@
     <router-link
       v-for="destination in destinations"
       :key="destination.id"
-      :to="{ name: 'destination.view', params: { id: destination.id } }"
+      :to="{
+        name: 'destination.view',
+        params: { id: destination.id, slug: destination.slug },
+      }"
       >{{ destination.name }}</router-link
     >
   </div>
