@@ -14,7 +14,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "brazil" */ "../views/BrazilView.vue"),
+      import(/* webpackChunkName: "brazil" */ "@/views/BrazilView.vue"),
   },
   {
     path: "/hawaii",
@@ -23,7 +23,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "hawaii" */ "../views/HawaiiView.vue"),
+      import(/* webpackChunkName: "hawaii" */ "@/views/HawaiiView.vue"),
   },
   {
     path: "/jamaica",
@@ -32,7 +32,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "jamaica" */ "../views/JamaicaView.vue"),
+      import(/* webpackChunkName: "jamaica" */ "@/views/JamaicaView.vue"),
   },
   {
     path: "/panama",
@@ -41,7 +41,11 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "panama" */ "../views/PanamaView.vue"),
+      import(/* webpackChunkName: "panama" */ "@/views/PanamaView.vue"),
+  },
+  {
+    path: "/destination/:id",
+    component: () => import("@/views/DestinationView.vue"),
   },
 ];
 
