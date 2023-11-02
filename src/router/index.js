@@ -8,7 +8,7 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/vue-school-travel-app/:id/:slug",
+    path: "/destination/:id/:slug",
     name: "destination.view",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
