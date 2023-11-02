@@ -3,6 +3,7 @@ import HomeView from "@/views/HomeView.vue";
 import BrazilView from "@/views/BrazilView.vue";
 import HawaiiView from "@/views/HawaiiView.vue";
 import JamaicaView from "@/views/JamaicaView.vue";
+import PanamaView from "@/views/PanamaView.vue";
 
 const routes = [
   {
@@ -33,6 +34,11 @@ const routes = [
     path: "/jamaica",
     name: "jamaica",
     component: JamaicaView,
+  },
+  {
+    path: "/panama",
+    name: "panama",
+    component: PanamaView,
   },
 ];
 
