@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "@/views/HomeView.vue";
 import BrazilView from "@/views/BrazilView.vue";
+import HawaiiView from "@/views/HawaiiView.vue";
 
 const routes = [
   {
@@ -21,6 +22,11 @@ const routes = [
     path: "/brazil",
     name: "brazil",
     component: BrazilView,
+  },
+  {
+    path: "/hawaii",
+    name: "hawaii",
+    component: HawaiiView,
   },
 ];
 
