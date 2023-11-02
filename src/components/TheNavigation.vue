@@ -10,7 +10,7 @@
     <router-link
       v-for="destination in destinations"
       :key="destination.id"
-      :to="destination.slug"
+      :to="`/destination/${destination.id}`"
       >{{ destination.name }}</router-link
     >
   </div>
