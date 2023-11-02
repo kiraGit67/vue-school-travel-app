@@ -8,44 +8,11 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/brazil",
-    name: "brazil",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "brazil" */ "@/views/BrazilView.vue"),
-  },
-  {
-    path: "/hawaii",
-    name: "hawaii",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "hawaii" */ "@/views/HawaiiView.vue"),
-  },
-  {
-    path: "/jamaica",
-    name: "jamaica",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "jamaica" */ "@/views/JamaicaView.vue"),
-  },
-  {
-    path: "/panama",
-    name: "panama",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "panama" */ "@/views/PanamaView.vue"),
-  },
-  {
     path: "/vue-school-travel-app/:id",
     name: "destination.view",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
     component: () => import("@/views/DestinationView.vue"),
   },
 ];
