@@ -27,3 +27,9 @@ export default {
   },
 };
 </script>
+
+<style lang="css">
+#nav .vue-school-active-link {
+  color: turquoise;
+}
+</style>
