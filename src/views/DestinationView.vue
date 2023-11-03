@@ -20,6 +20,10 @@ export default {
       type: Number,
       required: true,
     },
+    slug: {
+      type: String,
+      required: true,
+    },
   },
   computed: {
     /*
@@ -29,7 +33,8 @@ export default {
     */
     destination() {
       return sourceData.destinations.find(
-        (destination) => destination.id === this.id
+        (destination) =>
+          destination.id === this.id && destination.slug === this.slug
       );
     },
   },
