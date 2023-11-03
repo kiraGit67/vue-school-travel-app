@@ -10,6 +10,23 @@
       <p>{{ destination.description }}</p>
     </div>
   </section>
+  <section class="experiences">
+    <h2>Top Experiences in {{ destination.name }}</h2>
+    <div class="cards">
+      <div
+        class="card"
+        v-for="experience in destination.experiences"
+        :key="experience.slug"
+      >
+        <img
+          :src="`/images/${experience.image}`"
+          :alt="experience.name"
+          :title="experience.name"
+        />
+        <div class="card__text">{{ experience.name }}</div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
