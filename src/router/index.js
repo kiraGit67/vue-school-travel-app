@@ -15,6 +15,7 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import("@/views/DestinationView.vue"),
     props: (route) => ({
+      ...route.params,
       id: parseInt(route.params.id),
       slug: route.params.slug,
     }),
