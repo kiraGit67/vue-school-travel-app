@@ -13,18 +13,23 @@
   <section class="experiences">
     <h2>Top Experiences in {{ destination.name }}</h2>
     <div class="cards">
-      <div
-        class="card"
+      <router-link
         v-for="experience in destination.experiences"
         :key="experience.slug"
+        :to="{
+          name: 'experience.view',
+          params: { experienceSlug: experience.slug },
+        }"
       >
-        <img
-          :src="`/images/${experience.image}`"
-          :alt="experience.name"
-          :title="experience.name"
-        />
-        <div class="card__text">{{ experience.name }}</div>
-      </div>
+        <div class="card">
+          <img
+            :src="`/images/${experience.image}`"
+            :alt="experience.name"
+            :title="experience.name"
+          />
+          <div class="card__text">{{ experience.name }}</div>
+        </div>
+      </router-link>
     </div>
   </section>
 </template>
