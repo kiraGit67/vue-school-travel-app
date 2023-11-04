@@ -21,14 +21,7 @@
           params: { experienceSlug: experience.slug },
         }"
       >
-        <div class="card">
-          <img
-            :src="`/images/${experience.image}`"
-            :alt="experience.name"
-            :title="experience.name"
-          />
-          <div class="card__text">{{ experience.name }}</div>
-        </div>
+        <experience-card :experience="experience" />
       </router-link>
     </div>
   </section>
@@ -36,7 +29,10 @@
 
 <script>
 import sourceData from "@/data.json";
+import ExperienceCard from "@/components/ExperienceCard.vue";
+
 export default {
+  components: { ExperienceCard },
   props: {
     id: {
       type: Number,
