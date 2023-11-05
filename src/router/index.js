@@ -19,19 +19,21 @@ const routes = [
       id: parseInt(route.params.id),
       slug: route.params.slug,
     }),
-  },
-  {
-    path: "/destination/:id/:slug/:experienceSlug",
-    name: "experience.view",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import("@/views/ExperienceView.vue"),
-    props: (route) => ({
-      ...route.params,
-      id: parseInt(route.params.id),
-      slug: route.params.experienceSlug,
-    }),
+    children: [
+      {
+        path: ":experienceSlug",
+        name: "experience.view",
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () => import("@/views/ExperienceView.vue"),
+        props: (route) => ({
+          ...route.params,
+          id: parseInt(route.params.id),
+          slug: route.params.experienceSlug,
+        }),
+      },
+    ],
   },
 ];
 
