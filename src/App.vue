@@ -1,9 +1,11 @@
 <template>
   <the-navigation />
   <div class="container">
-    <transition>
-      <router-view :key="$route.path"></router-view>
-    </transition>
+    <router-view v-slot="{ Component }">
+      <transition name="slide">
+        <component :is="Component" :key="$route.path"></component>
+      </transition>
+    </router-view>
   </div>
 </template>
 
