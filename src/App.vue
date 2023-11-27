@@ -1,7 +1,9 @@
 <template>
   <the-navigation />
   <div class="container">
-    <router-view></router-view>
+    <transition>
+      <router-view :key="$route.path"></router-view>
+    </transition>
   </div>
 </template>
 
