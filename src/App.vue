@@ -2,7 +2,7 @@
   <the-navigation />
   <div class="container">
     <router-view v-slot="{ Component }">
-      <transition name="moveDown" mode="out-in">
+      <transition name="slide-fade" mode="out-in">
         <component :is="Component" :key="$route.path"></component>
       </transition>
     </router-view>
@@ -77,6 +77,21 @@ export default {
 
 .fade-enter,
 .fade-leave-to {
+  opacity: 0;
+}
+
+/* transition .slide-fade ************************************************************ */
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(400px);
   opacity: 0;
 }
 </style>
