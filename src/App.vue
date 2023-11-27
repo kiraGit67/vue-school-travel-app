@@ -2,7 +2,7 @@
   <the-navigation />
   <div class="container">
     <router-view v-slot="{ Component }">
-      <transition name="fade" mode="out-in">
+      <transition name="moveDown" mode="out-in">
         <component :is="Component" :key="$route.path"></component>
       </transition>
     </router-view>
@@ -20,6 +20,7 @@ export default {
 </script>
 
 <style lang="css">
+/* transition .moveUp **************************************************************** */
 .moveUp-enter-active {
   animation: fadeIn 1s ease-in;
 }
@@ -49,6 +50,26 @@ export default {
   }
 }
 
+/* transition .moveDown **************************************************************** */
+.moveDown-enter-active {
+  animation: fadeIn 1s ease-in;
+}
+
+.moveDown-leave-active {
+  animation: moveDown 1s ease-out;
+}
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(1000px);
+  }
+}
+
+/* transition .fade **************************************************************** */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s;
