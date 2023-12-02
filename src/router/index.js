@@ -15,6 +15,14 @@ const routes = [
     component: () => import("@/views/AboutView.vue"),
   },
   {
+    path: "/protected",
+    name: "protected",
+    component: () => import("@/views/ProtectedView.vue"),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
     path: "/destination/:id/:slug",
     name: "destination.view",
     // route level code-splitting
