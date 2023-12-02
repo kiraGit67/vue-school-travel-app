@@ -23,6 +23,11 @@ const routes = [
     },
   },
   {
+    path: "/login",
+    name: "login",
+    component: () => import("@/views/LoginView.vue"),
+  },
+  {
     path: "/destination/:id/:slug",
     name: "destination.view",
     // route level code-splitting
@@ -86,6 +91,15 @@ const router = createRouter({
     );
   },
   linkActiveClass: "vue-school-active-link",
+});
+
+router.beforeEach((to, from) => {
+  if (
+    (to.meta.requiresAuth && !window.user) ||
+    (from.meta.requiresAuth && !window.user)
+  ) {
+    return { name: "login" };
+  }
 });
 
 export default router;
