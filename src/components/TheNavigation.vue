@@ -2,6 +2,7 @@
   <div id="nav">
     <router-link id="logo" to="/">Vue School Travel App</router-link>
     <div>
+      <router-link to="/about">About Us</router-link>
       <router-link
         v-for="destination in destinations"
         :key="destination.id"
