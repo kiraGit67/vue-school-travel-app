@@ -93,11 +93,8 @@ const router = createRouter({
   linkActiveClass: "vue-school-active-link",
 });
 
-router.beforeEach((to, from) => {
-  if (
-    (to.meta.requiresAuth && !window.user) ||
-    (from.meta.requiresAuth && !window.user)
-  ) {
+router.beforeEach((to) => {
+  if (to.meta.requiresAuth && !window.user) {
     return { name: "login" };
   }
 });
