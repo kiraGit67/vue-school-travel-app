@@ -33,4 +33,10 @@ export default {
 #nav .vue-school-active-link {
   color: turquoise;
 }
+
+@media screen and (max-width: 767px) {
+  #nav > div {
+    text-align: center;
+  }
+}
 </style>
