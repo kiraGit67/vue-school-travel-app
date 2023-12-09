@@ -1,6 +1,15 @@
 <template>
-  <a v-if="isExternal" :href="to"><slot /></a>
-  <router-link v-else v-bind="$props"><slot /></router-link>
+  <a
+    v-if="isExternal"
+    :href="to"
+    target="_blank"
+    rel="noopener"
+    class="external-link"
+    ><slot
+  /></a>
+  <router-link v-else v-bind="$props" class="internal-link"
+    ><slot
+  /></router-link>
 </template>
 
 <script>
