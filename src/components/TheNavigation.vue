@@ -13,6 +13,7 @@
         >{{ destination.name }}</AppLink
       >
       <AppLink :to="{ name: 'protected' }">Dashboard</AppLink>
+      <AppLink to="https://vueschool.io">Vue School</AppLink>
     </div>
   </div>
 </template>
