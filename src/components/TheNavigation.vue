@@ -1,18 +1,18 @@
 <template>
   <div id="nav">
-    <router-link id="logo" to="/">Vue School Travel App</router-link>
+    <AppLink id="logo" to="/">Vue School Travel App</AppLink>
     <div>
-      <router-link to="/about">About Us</router-link>
-      <router-link
+      <AppLink to="/about">About Us</AppLink>
+      <AppLink
         v-for="destination in destinations"
         :key="destination.id"
         :to="{
           name: 'destination.view',
           params: { id: destination.id, slug: destination.slug },
         }"
-        >{{ destination.name }}</router-link
+        >{{ destination.name }}</AppLink
       >
-      <router-link :to="{ name: 'protected' }">Dashboard</router-link>
+      <AppLink :to="{ name: 'protected' }">Dashboard</AppLink>
     </div>
   </div>
 </template>
