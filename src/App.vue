@@ -16,14 +16,17 @@
       </transition>
     </router-view>
   </div>
+  <footer-navigation />
 </template>
 
 <script>
 import TheNavigation from "@/components/TheNavigation.vue";
+import FooterNavigation from "@/components/FooterNavigation.vue";
 
 export default {
   components: {
     TheNavigation,
+    FooterNavigation,
   },
 };
 </script>
