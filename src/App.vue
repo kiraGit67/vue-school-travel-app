@@ -16,7 +16,10 @@
       </transition>
     </router-view>
   </div>
+  <router-view name="FooterNavigation"></router-view>
+  <!--
   <footer-navigation />
+  -->
 </template>
 
 <script>
