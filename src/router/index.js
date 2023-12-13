@@ -12,17 +12,26 @@ const routes = [
   {
     path: "/about",
     name: "about",
-    component: () => import("@/views/AboutView.vue"),
+    components: {
+      default: () => import("@/views/AboutView.vue"),
+      FooterNavigation: () => import("@/components/FooterNavigation.vue"),
+    },
   },
   {
     path: "/imprint",
     name: "imprint",
-    component: () => import("@/views/ImprintView.vue"),
+    components: {
+      default: () => import("@/views/ImprintView.vue"),
+      FooterNavigation: () => import("@/components/FooterNavigation.vue"),
+    },
   },
   {
     path: "/terms",
     name: "terms",
-    component: () => import("@/views/GeneralTermsView.vue"),
+    components: {
+      default: () => import("@/views/GeneralTermsView.vue"),
+      FooterNavigation: () => import("@/components/FooterNavigation.vue"),
+    },
   },
   {
     path: "/protected",
