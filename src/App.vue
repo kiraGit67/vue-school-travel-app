@@ -1,7 +1,10 @@
 <template>
   <the-navigation />
   <div class="container">
-    <router-view v-slot="{ Component }">
+    <router-view class="view left-sidebar" name="LeftSidebar"
+      ><left-sidebar
+    /></router-view>
+    <router-view v-slot="{ Component }" class="main-view">
       <transition name="slide-fade" mode="out-in">
         <component :is="Component" :key="$route.path"></component>
       </transition>
@@ -11,15 +14,29 @@
 
 <script>
 import TheNavigation from "@/components/TheNavigation.vue";
+import LeftSidebar from "@/components/LeftSidebar.vue";
 
 export default {
   components: {
     TheNavigation,
+    LeftSidebar,
   },
 };
 </script>
 
 <style lang="css">
+.container {
+  display: flex;
+}
+
+.left-sidebar {
+  width: 20%;
+}
+
+.main-view {
+  width: 100%;
+}
+
 /* transition .moveUp **************************************************************** */
 .moveUp-enter-active {
   animation: fadeIn 1s ease-in;
