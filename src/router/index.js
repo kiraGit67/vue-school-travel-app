@@ -15,6 +15,16 @@ const routes = [
     component: () => import("@/views/AboutView.vue"),
   },
   {
+    path: "/imprint",
+    name: "imprint",
+    component: () => import("@/views/ImprintView.vue"),
+  },
+  {
+    path: "/terms",
+    name: "terms",
+    component: () => import("@/views/GeneralTermsView.vue"),
+  },
+  {
     path: "/protected",
     name: "protected",
     components: {
