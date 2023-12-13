@@ -68,7 +68,26 @@ a:visited {
   display: flex;
   justify-content: space-between;
 }
-#nav a {
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 0;
+  padding: 15px;
+  background: #2c3e50;
+  color: white;
+  display: flex;
+  align-items: center;
+  border-top: 5px solid #4e6c71;
+  z-index: 2;
+  display: flex;
+  justify-content: space-around;
+}
+
+#nav a,
+#footer a {
   display: inline-block;
   margin-right: 20px;
   color: white;
@@ -76,7 +95,9 @@ a:visited {
   transition: 0.2 ease color;
 }
 #nav a.router-link-active,
-#nav a:hover {
+#footer a.router-link-active,
+#nav a:hover,
+#footer a:hover {
   opacity: 1;
 }
 #logo {
@@ -231,7 +252,8 @@ a {
     gap: 0.5rem;
   }
 
-  #nav {
+  #nav,
+  #footer {
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
