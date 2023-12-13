@@ -1,9 +1,15 @@
 <template>
   <the-navigation />
   <div class="container">
-    <router-view class="view left-sidebar" name="LeftSidebar"
-      ><left-sidebar
-    /></router-view>
+    <router-view
+      v-slot="{ Component }"
+      class="view left-sidebar"
+      name="LeftSidebar"
+    >
+      <transition name="slide-fade" mode="out-in">
+        <component :is="Component" :key="$route.path"></component>
+      </transition>
+    </router-view>
     <router-view v-slot="{ Component }" class="main-view">
       <transition name="slide-fade" mode="out-in">
         <component :is="Component" :key="$route.path"></component>
@@ -14,12 +20,10 @@
 
 <script>
 import TheNavigation from "@/components/TheNavigation.vue";
-import LeftSidebar from "@/components/LeftSidebar.vue";
 
 export default {
   components: {
     TheNavigation,
-    LeftSidebar,
   },
 };
 </script>
