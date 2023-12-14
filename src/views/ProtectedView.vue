@@ -18,6 +18,7 @@ export default {
   data() {
     return {
       username: window.user,
+      password: window.password,
     };
   },
   methods: {
