@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>{{ username }}‘s Orders</h1>
+    <button @click="logout">Logout</button>
   </div>
 </template>
 
