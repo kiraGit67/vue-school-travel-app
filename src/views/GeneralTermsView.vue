@@ -1,5 +1,5 @@
 <template>
   <div>
-    <h1>General Business Terms</h1>
+    <h1>Terms &amp; Conditions</h1>
   </div>
 </template>
