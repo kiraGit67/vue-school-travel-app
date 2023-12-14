@@ -25,8 +25,12 @@
         <h2>Follow us on Social Media</h2>
         <div class="social-media">
           <span v-for="social in socialMedia" :key="social.id">
-            <a :href="social.url" target="_blank" :title="social.alt"
-              >{{ social.name }} <img src="social.imgSource"
+            <a :href="social.url" target="_blank">
+              <img
+                :src="social.imgSource"
+                :title="social.alt"
+                :alt="social.alt"
+                style="height: 50px"
             /></a>
           </span>
         </div>
@@ -98,7 +102,7 @@ export default {
         name: "Facebook",
         alt: "Vue School on Facebook",
         url: "https://www.facebook.com/vueschool/",
-        imgSource: "./assets/social-media-icons/facebook-logo.png",
+        imgSource: require("@/assets/social-media-icons/square-facebook.svg"),
         class: "fa-brands fa-square-facebook",
       },
       {
@@ -106,7 +110,7 @@ export default {
         name: "Twitter",
         alt: "Vue School on Twitter",
         url: "https://twitter.com/vueschool_io",
-        imgSource: "./assets/social-media-icons/square-twitter.svg",
+        imgSource: require("@/assets/social-media-icons/square-twitter.svg"),
         class: "fa-brands fa-square-twitter",
       },
       {
@@ -114,7 +118,7 @@ export default {
         name: "Instagram",
         alt: "Vue School on Instagram",
         url: "https://www.instagram.com/vueschool/",
-        imgSource: "./assets/social-media-icons/square-instagram.svg",
+        imgSource: require("@/assets/social-media-icons/square-instagram.svg"),
         class: "fa-brands fa-square-instagram",
       },
       {
@@ -122,7 +126,7 @@ export default {
         name: "YouTube",
         alt: "Vue School on YouTube",
         url: "https://www.youtube.com/@vueschool",
-        imgSource: "./assets/social-media-icons/youtube.svg",
+        imgSource: require("@/assets/social-media-icons/youtube.svg"),
         class: "fa-brands fa-youtube",
       },
       {
@@ -130,7 +134,7 @@ export default {
         name: "LinkedIn",
         alt: "Vue School on LinkedIn",
         url: "https://www.linkedin.com/company/vueschool",
-        imgSource: "./assets/social-media-icons/linkedin.svg",
+        imgSource: require("@/assets/social-media-icons/linkedin.svg"),
         class: "fa-brands fa-linkedin",
       },
     ]);
@@ -195,17 +199,17 @@ h2 {
 
 .social-media {
   display: flex;
-  gap: 0.5rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
-
+/*
 .social-media > span::after {
   content: "|";
   padding-left: 0.5rem;
   font-weight: bold;
   color: turquoise;
 }
-
+*/
 .social-media > span:last-child::after {
   content: "";
 }
