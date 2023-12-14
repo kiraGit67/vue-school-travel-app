@@ -62,6 +62,14 @@ const routes = [
       requiresAuth: true,
     },
   },
+  /*
+  { path: "/:orderID(\\d+)", name: "orders" },
+  { path: "/:productName", name: "product" },
+  */
+  {
+    path: "/example/:id(\\d+)+",
+    component: () => import("@/views/LoginView.vue"),
+  },
   {
     path: "/destination/:id/:slug",
     name: "destination.view",
