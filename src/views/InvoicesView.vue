@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>Invoices</h1>
+    <h1>{{ username }}‘s Invoices</h1>
+    <button @click="logout">Logout</button>
   </div>
 </template>
 
@@ -16,6 +17,17 @@ export default {
 
       if (!answer) return false;
     });
+  },
+  data() {
+    return {
+      username: window.user,
+    };
+  },
+  methods: {
+    logout() {
+      window.user = null;
+      this.$router.push({ name: "home", query: { logout: null } });
+    },
   },
 };
 </script>
