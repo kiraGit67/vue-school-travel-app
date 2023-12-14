@@ -8,6 +8,7 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
+    alias: "/home",
   },
   {
     path: "/about",
@@ -16,6 +17,7 @@ const routes = [
       default: () => import("@/views/AboutView.vue"),
       FooterNavigation: () => import("@/components/FooterNavigation.vue"),
     },
+    alias: "/about-us",
   },
   {
     path: "/imprint",
