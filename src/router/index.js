@@ -144,7 +144,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to) => {
-  if (to.meta.requiresAuth && !window.user) {
+  if (to.meta.requiresAuth && (!window.user || !window.password)) {
     return { name: "login", query: { redirect: to.fullPath } };
   }
 });
