@@ -25,13 +25,9 @@
         <h2>Follow us on Social Media</h2>
         <div class="social-media">
           <span v-for="social in socialMedia" :key="social.id">
-            <a
-              :href="social.url"
-              :alt="social.alt"
-              :title="social.alt"
-              target="_blank"
-              >{{ social.name }}</a
-            >
+            <a :href="social.url" target="_blank" :title="social.alt"
+              >{{ social.name }} <img src="social.imgSource"
+            /></a>
           </span>
         </div>
       </div>
@@ -102,35 +98,40 @@ export default {
         name: "Facebook",
         alt: "Vue School on Facebook",
         url: "https://www.facebook.com/vueschool/",
-        img: "",
+        imgSource: "./assets/social-media-icons/facebook-logo.png",
+        class: "fa-brands fa-square-facebook",
       },
       {
         id: 2,
         name: "Twitter",
         alt: "Vue School on Twitter",
         url: "https://twitter.com/vueschool_io",
-        img: "",
+        imgSource: "./assets/social-media-icons/square-twitter.svg",
+        class: "fa-brands fa-square-twitter",
       },
       {
         id: 3,
         name: "Instagram",
         alt: "Vue School on Instagram",
         url: "https://www.instagram.com/vueschool/",
-        img: "",
+        imgSource: "./assets/social-media-icons/square-instagram.svg",
+        class: "fa-brands fa-square-instagram",
       },
       {
         id: 4,
         name: "YouTube",
         alt: "Vue School on YouTube",
         url: "https://www.youtube.com/@vueschool",
-        img: "",
+        imgSource: "./assets/social-media-icons/youtube.svg",
+        class: "fa-brands fa-youtube",
       },
       {
         id: 5,
         name: "LinkedIn",
         alt: "Vue School on LinkedIn",
         url: "https://www.linkedin.com/company/vueschool",
-        img: "",
+        imgSource: "./assets/social-media-icons/linkedin.svg",
+        class: "fa-brands fa-linkedin",
       },
     ]);
 
