@@ -81,7 +81,7 @@ export default {
       {
         id: 2,
         name: "E-Mail",
-        value: "travelApp@vue-school.com",
+        value: "travelApp@vueschool.io",
       },
       {
         id: 3,
@@ -207,6 +207,11 @@ h2 {
 
 .social-media > span:last-child::after {
   content: "";
+}
+
+a:hover {
+  color: turquoise;
+  font-size: bold;
 }
 
 @media screen and (max-width: 767px) {
