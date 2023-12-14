@@ -1,9 +1,11 @@
 <template>
   <div class="home">
     <h1>All Destinations</h1>
-    <p><button @click="triggerRouterError">Trigger Router Error</button></p>
-    <p><button @click="addDynamicRoute">Add Dynamic Route</button></p>
-    <router-link to="/dynamic">Visit Dynamic Route</router-link>
+    <div class="buttons">
+      <button @click="triggerRouterError">Trigger Router Error</button>
+      <button @click="addDynamicRoute">Add Dynamic Route</button>
+      <router-link to="/dynamic">Visit Dynamic Route</router-link>
+    </div>
     <div class="destinations">
       <router-link
         v-for="destination in destinations"
@@ -58,3 +60,34 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .buttons {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .buttons > a {
+    align-self: center;
+  }
+
+  h1 {
+    text-align: center;
+  }
+}
+</style>
