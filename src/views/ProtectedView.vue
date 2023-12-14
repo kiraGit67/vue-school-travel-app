@@ -1,10 +1,15 @@
 <template>
   <div>
     <h1>Greetings, {{ username }}</h1>
-    <button class="btn" @click="logout">Logout</button>
-    <router-link :to="{ name: 'invoices' }">
-      <button class="btn">Invoices</button>
-    </router-link>
+    <div class="buttons">
+      <button class="btn" @click="logout">Logout</button>
+      <router-link :to="{ name: 'invoices' }">
+        <button class="btn">Invoices</button>
+      </router-link>
+      <router-link :to="{ name: 'orders' }">
+        <button class="btn">Orders</button>
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -23,3 +28,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+</style>
