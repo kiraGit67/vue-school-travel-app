@@ -63,6 +63,17 @@ const routes = [
     },
   },
   {
+    path: "/orders",
+    name: "orders",
+    components: {
+      default: () => import("@/views/OrdersView.vue"),
+      LeftSidebar: () => import("@/components/LeftSidebar.vue"),
+    },
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
     path: "/example/:id(\\d+)+",
     component: () => import("@/views/LoginView.vue"),
   },
