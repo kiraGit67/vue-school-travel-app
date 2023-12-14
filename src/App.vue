@@ -16,20 +16,19 @@
       </transition>
     </router-view>
   </div>
-  <router-view name="FooterNavigation"></router-view>
-  <!--
-  <footer-navigation />
-  -->
+  <router-view v-slot="{ Component }" name="FooterNavigation">
+    <transition name="fade" mode="out-in">
+      <component :is="Component" :key="$route.path"></component>
+    </transition>
+  </router-view>
 </template>
 
 <script>
 import TheNavigation from "@/components/TheNavigation.vue";
-import FooterNavigation from "@/components/FooterNavigation.vue";
 
 export default {
   components: {
     TheNavigation,
-    FooterNavigation,
   },
 };
 </script>
