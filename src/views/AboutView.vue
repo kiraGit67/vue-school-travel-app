@@ -34,7 +34,16 @@
             /></a>
           </span>
         </div>
+        <h2>Products</h2>
+        <div class="products">
+          <span v-for="product in products" :key="product.id"
+            ><a :href="product.url" target="_blank">{{ product.name }}</a></span
+          >
+        </div>
       </div>
+    </div>
+    <div class="two-cols">
+      <article class="fact"></article>
     </div>
   </div>
 </template>
@@ -139,6 +148,40 @@ export default {
       },
     ]);
 
+    const facts = ref([
+      {
+        id: 1,
+        title: "Vue.js Developers",
+        count: 140000,
+        img: require("@/assets/facts-icons/vue-js-developers.png"),
+        description:
+          "140,000 developers have learned Vue.js through Vue School",
+      },
+      {
+        id: 2,
+        title: "Countries worldwide",
+        count: 136,
+        img: require("@/assets/facts-icons/countries-worldwide.png"),
+        description:
+          "We Teach Vue.js to developers from 136 countries worldwide",
+      },
+      {
+        id: 3,
+        title: "Million Visitors",
+        count: 1.6,
+        img: require("@/assets/facts-icons/visitors.png"),
+        description: "Each year Vue School has over 1.6 Million sessions",
+      },
+      {
+        id: 4,
+        title: "+ Premium Vue.js Lessons",
+        count: 712,
+        img: require("@/assets/facts-icons/premium-vue-js-lessons.png"),
+        description:
+          "Over 712 premium lessons to learn Vue.js and the ecosystem",
+      },
+    ]);
+
     return {
       vueJSdevelopers,
       countries,
@@ -147,6 +190,7 @@ export default {
       products,
       contactData,
       socialMedia,
+      facts,
     };
   },
   /*
@@ -197,7 +241,8 @@ h2 {
   grid-template-columns: 100px 1fr;
 }
 
-.social-media {
+.social-media,
+.products {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
