@@ -244,6 +244,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  margin-bottom: 3rem;
 }
 
 .contact-data > p {
@@ -272,6 +273,27 @@ h2 {
 a:hover {
   color: turquoise;
   font-size: bold;
+}
+
+.fact {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: white;
+  border: 1px solid #686dfa;
+  border-radius: 0.5rem;
+}
+
+.fact h2 {
+  color: #686dfa;
+}
+
+@media screen and (max-width: 1024px) {
+  .two-cols:nth-of-type(2) {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media screen and (max-width: 767px) {
