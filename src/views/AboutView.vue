@@ -43,7 +43,17 @@
       </div>
     </div>
     <div class="two-cols">
-      <article class="fact"></article>
+      <article class="fact" v-for="fact in facts" :key="fact.id">
+        <img
+          :src="fact.img"
+          :alt="fact.count + ' ' + fact.title"
+          :title="fact.count + ' ' + fact.title"
+        />
+        <div class="text">
+          <h2>{{ fact.count + " " + fact.title }}</h2>
+          <p>{{ fact.description }}</p>
+        </div>
+      </article>
     </div>
   </div>
 </template>
