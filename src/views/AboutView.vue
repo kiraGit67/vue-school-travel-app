@@ -43,6 +43,8 @@
       </div>
     </div>
     <div class="two-cols">
+      <fact-card v-for="fact in facts" :key="fact.id" :fact="fact" />
+      <!--
       <article class="fact" v-for="fact in facts" :key="fact.id">
         <img
           :src="fact.img"
@@ -54,6 +56,7 @@
           <p>{{ fact.description }}</p>
         </div>
       </article>
+      -->
     </div>
     <div class="four-cols">
       <article v-for="destination in destinations" :key="destination.id">
@@ -74,8 +77,10 @@
 <script>
 import { ref } from "vue";
 import sourceData from "@/data.json";
+import FactCard from "@/components/FactCard.vue";
 
 export default {
+  components: { FactCard },
   setup() {
     const vueJSdevelopers = ref("140,000");
     const countries = ref(136);
@@ -206,6 +211,8 @@ export default {
       },
     ]);
 
+    const FactCard = () => import("@/components/FactCard.vue");
+
     const destinations = ref(sourceData.destinations);
 
     return {
@@ -217,6 +224,7 @@ export default {
       contactData,
       socialMedia,
       facts,
+      FactCard,
       destinations,
     };
   },
@@ -291,7 +299,7 @@ a:hover {
   color: turquoise;
   font-size: bold;
 }
-
+/*
 .fact {
   display: flex;
   gap: 1rem;
@@ -306,7 +314,7 @@ a:hover {
 .fact h2 {
   color: #686dfa;
 }
-
+*/
 .four-cols {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
