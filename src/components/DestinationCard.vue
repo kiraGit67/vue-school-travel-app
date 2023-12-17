@@ -26,8 +26,9 @@ export default {
 <style scoped>
 .destination-card {
   border-radius: 0.75rem;
-  border: 1px solid turquoise;
+  border: 1px solid rgb(44, 62, 80);
   background-color: white;
+  box-shadow: 0 0 15px rgba(44, 62, 80, 0.35);
 }
 
 .destination-card > img {
