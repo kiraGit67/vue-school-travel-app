@@ -339,10 +339,15 @@ a:hover {
   .two-cols:nth-of-type(2) {
     grid-template-columns: 1fr;
   }
+
+  .four-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (max-width: 767px) {
-  .two-cols {
+  .two-cols,
+  .four-cols {
     grid-template-columns: 1fr;
   }
 }
