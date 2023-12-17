@@ -36,6 +36,14 @@ const routes = [
     },
   },
   {
+    path: "/contact",
+    name: "contact",
+    components: {
+      default: () => import("@/views/ContactView.vue"),
+      FooterNavigation: () => import("@/components/FooterNavigation.vue"),
+    },
+  },
+  {
     path: "/protected",
     name: "protected",
     components: {
