@@ -70,10 +70,10 @@ a:visited {
 }
 
 #footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  _position: fixed;
+  _bottom: 0;
+  _left: 0;
+  _right: 0;
   margin-top: 0;
   padding: 15px;
   background: #2c3e50;
