@@ -59,6 +59,12 @@
       -->
     </div>
     <div class="four-cols">
+      <destination-card
+        v-for="destination in destinations"
+        :key="destination.id"
+        :destination="destination"
+      />
+      <!--
       <article v-for="destination in destinations" :key="destination.id">
         <img
           :src="`/images/${destination.image}`"
@@ -70,6 +76,7 @@
           <p>{{ destination.description }}</p>
         </div>
       </article>
+      -->
     </div>
   </div>
 </template>
@@ -78,9 +85,10 @@
 import { ref } from "vue";
 import sourceData from "@/data.json";
 import FactCard from "@/components/FactCard.vue";
+import DestinationCard from "@/components/DestinationCard.vue";
 
 export default {
-  components: { FactCard },
+  components: { FactCard, DestinationCard },
   setup() {
     const vueJSdevelopers = ref("140,000");
     const countries = ref(136);
@@ -215,6 +223,8 @@ export default {
 
     const destinations = ref(sourceData.destinations);
 
+    const DestinationCard = () => import("@/components/DestinationCard.vue");
+
     return {
       vueJSdevelopers,
       countries,
@@ -226,6 +236,7 @@ export default {
       facts,
       FactCard,
       destinations,
+      DestinationCard,
     };
   },
   /*
@@ -320,7 +331,7 @@ a:hover {
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
-
+/*
 .four-cols > article {
   border-radius: 0.75rem;
   border: 1px solid turquoise;
@@ -342,7 +353,7 @@ a:hover {
 .four-cols > article > div > h2 {
   color: turquoise;
 }
-
+*/
 @media screen and (max-width: 1024px) {
   .two-cols:nth-of-type(2) {
     grid-template-columns: 1fr;
