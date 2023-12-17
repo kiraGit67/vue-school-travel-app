@@ -55,11 +55,25 @@
         </div>
       </article>
     </div>
+    <div class="four-cols">
+      <article v-for="destination in destinations" :key="destination.id">
+        <img
+          :src="`/images/${destination.image}`"
+          :alt="destination.name"
+          :title="destination.name"
+        />
+        <div>
+          <h2>{{ destination.name }}</h2>
+          <p>{{ destination.description }}</p>
+        </div>
+      </article>
+    </div>
   </div>
 </template>
 
 <script>
 import { ref } from "vue";
+import sourceData from "@/data.json";
 
 export default {
   setup() {
@@ -192,6 +206,8 @@ export default {
       },
     ]);
 
+    const destinations = ref(sourceData.destinations);
+
     return {
       vueJSdevelopers,
       countries,
@@ -201,6 +217,7 @@ export default {
       contactData,
       socialMedia,
       facts,
+      destinations,
     };
   },
   /*
@@ -288,6 +305,34 @@ a:hover {
 
 .fact h2 {
   color: #686dfa;
+}
+
+.four-cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.four-cols > article {
+  border-radius: 0.75rem;
+  border: 1px solid turquoise;
+  background-color: white;
+}
+
+.four-cols > article > img {
+  width: 100%;
+  border-top-right-radius: 0.75rem;
+  border-top-left-radius: 0.75rem;
+}
+
+.four-cols > article > div,
+.four-cols > article > div > h2 {
+  padding-inline: 1.5rem;
+  text-align: center;
+}
+
+.four-cols > article > div > h2 {
+  color: turquoise;
 }
 
 @media screen and (max-width: 1024px) {
