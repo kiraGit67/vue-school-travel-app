@@ -44,19 +44,6 @@
     </div>
     <div class="two-cols">
       <fact-card v-for="fact in facts" :key="fact.id" :fact="fact" />
-      <!--
-      <article class="fact" v-for="fact in facts" :key="fact.id">
-        <img
-          :src="fact.img"
-          :alt="fact.count + ' ' + fact.title"
-          :title="fact.count + ' ' + fact.title"
-        />
-        <div class="text">
-          <h2>{{ fact.count + " " + fact.title }}</h2>
-          <p>{{ fact.description }}</p>
-        </div>
-      </article>
-      -->
     </div>
     <div class="four-cols">
       <destination-card
@@ -64,19 +51,6 @@
         :key="destination.id"
         :destination="destination"
       />
-      <!--
-      <article v-for="destination in destinations" :key="destination.id">
-        <img
-          :src="`/images/${destination.image}`"
-          :alt="destination.name"
-          :title="destination.name"
-        />
-        <div>
-          <h2>{{ destination.name }}</h2>
-          <p>{{ destination.description }}</p>
-        </div>
-      </article>
-      -->
     </div>
   </div>
 </template>
@@ -294,14 +268,7 @@ h2 {
   gap: 1.5rem;
   flex-wrap: wrap;
 }
-/*
-.social-media > span::after {
-  content: "|";
-  padding-left: 0.5rem;
-  font-weight: bold;
-  color: turquoise;
-}
-*/
+
 .social-media > span:last-child::after {
   content: "";
 }
@@ -310,50 +277,13 @@ a:hover {
   color: turquoise;
   font-size: bold;
 }
-/*
-.fact {
-  display: flex;
-  gap: 1rem;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 0.5rem;
-  background-color: white;
-  border: 1px solid #686dfa;
-  border-radius: 0.5rem;
-}
 
-.fact h2 {
-  color: #686dfa;
-}
-*/
 .four-cols {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
-/*
-.four-cols > article {
-  border-radius: 0.75rem;
-  border: 1px solid turquoise;
-  background-color: white;
-}
 
-.four-cols > article > img {
-  width: 100%;
-  border-top-right-radius: 0.75rem;
-  border-top-left-radius: 0.75rem;
-}
-
-.four-cols > article > div,
-.four-cols > article > div > h2 {
-  padding-inline: 1.5rem;
-  text-align: center;
-}
-
-.four-cols > article > div > h2 {
-  color: turquoise;
-}
-*/
 @media screen and (max-width: 1024px) {
   .two-cols:nth-of-type(2) {
     grid-template-columns: 1fr;
