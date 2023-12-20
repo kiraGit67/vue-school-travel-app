@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="form">
+    <div class="form">
       <h1>Contact Us</h1>
       <div class="form-row">
         <div class="input-wrapper">
@@ -63,7 +63,7 @@
               {{ destination.name }}
             </option>
           </select>
-          <input type="submit" value="Send" class="btn" />
+          <button class="btn" @click="writeMSG">Send</button>
         </div>
         <div class="input-wrapper">
           <label for="notes">Additional Notes</label>
@@ -76,16 +76,21 @@
           ></textarea>
         </div>
       </div>
-    </form>
+    </div>
+    <div>{{ message }}</div>
   </div>
 </template>
 
 <script>
 import { ref } from "vue";
+import { useRouter, useRoute } from "vue-router";
 import dataSource from "@/data.json";
 
 export default {
   setup() {
+    const router = useRouter();
+    const route = useRoute();
+
     const firstname = ref("");
     const lastname = ref("");
     const companyName = ref("");
@@ -96,7 +101,17 @@ export default {
     const chosenDestination = ref("");
     const additionalNotes = ref("");
 
+    const message = ref("");
+
+    const writeMSG = () => {
+      message.value = ref(additionalNotes.value + " sent from " + email.value);
+      const redirectPath = route.query.redirect || "/contact";
+      router.push(redirectPath);
+    };
+
     return {
+      route,
+      router,
       firstname,
       lastname,
       companyName,
@@ -104,6 +119,8 @@ export default {
       destinations,
       chosenDestination,
       additionalNotes,
+      message,
+      writeMSG,
     };
   },
 };
