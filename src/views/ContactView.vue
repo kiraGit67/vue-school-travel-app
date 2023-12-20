@@ -48,6 +48,16 @@
       </div>
       <div class="form-row">
         <div class="input-wrapper">
+          <label for="notes">Additional Notes</label>
+          <textarea
+            v-model="additionalNotes"
+            name="notes"
+            id="notes"
+            rows="5"
+            class="input"
+          ></textarea>
+        </div>
+        <div class="input-wrapper">
           <label for="chosen-destination">Choose A Destination</label>
           <select
             class="input"
@@ -64,16 +74,6 @@
             </option>
           </select>
           <button class="btn" @click="writeMSG">Send</button>
-        </div>
-        <div class="input-wrapper">
-          <label for="notes">Additional Notes</label>
-          <textarea
-            v-model="additionalNotes"
-            name="notes"
-            id="notes"
-            rows="5"
-            class="input"
-          ></textarea>
         </div>
       </div>
     </div>
@@ -140,5 +140,14 @@ export default {
 .input-wrapper {
   display: flex;
   flex-direction: column;
+}
+
+@media screen and (max-width: 767px) {
+  .form {
+    margin-bottom: 3rem;
+  }
+  .form-row {
+    display: block;
+  }
 }
 </style>
