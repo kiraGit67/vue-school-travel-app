@@ -49,7 +49,10 @@
             id="email"
             name="email"
             class="input"
+            :class="{ invalid: emailError !== '' }"
+            @blur="validateEmail"
           />
+          <span v-if="emailError !== ''">{{ emailError }}</span>
         </div>
       </div>
       <div class="form-row">
@@ -129,6 +132,15 @@ export default {
       }
     };
 
+    const validateEmail = () => {
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      if (!emailPattern.test(email.value)) {
+        emailError.value = "Please insert a valid email address.";
+      } else {
+        emailError.value = "";
+      }
+    };
+
     return {
       route,
       router,
@@ -144,6 +156,7 @@ export default {
       additionalNotes,
       validateFirstName,
       validateLastName,
+      validateEmail,
     };
   },
 };
