@@ -86,6 +86,7 @@
         </div>
       </div>
       <p>All fields with "<span>*</span>" cannot be empty.</p>
+      <p v-if="msg !== ''">{{ msg }}</p>
     </form>
   </div>
 </template>
@@ -115,6 +116,8 @@ export default {
 
     const chosenDestination = ref("");
     const additionalNotes = ref("");
+
+    const msg = ref("");
 
     const validateFirstName = () => {
       if (firstname.value === "") {
@@ -147,9 +150,12 @@ export default {
         lastnameError.value === "" &&
         emailError.value === ""
       ) {
-        alert("Your Contact Data was sent successfully.");
+        //alert("Your Contact Data was sent successfully.");
+        msg.value = "Your Contact Data was sent successfully.";
       } else {
-        alert("Formular contains Errors. Please control your inserted data.");
+        //alert("Formular contains Errors. Please control your inserted data.");
+        msg.value =
+          "Formular contains Errors. Please control your inserted data.";
       }
     };
 
@@ -166,6 +172,7 @@ export default {
       destinations,
       chosenDestination,
       additionalNotes,
+      msg,
       validateFirstName,
       validateLastName,
       validateEmail,
