@@ -85,7 +85,7 @@
           <input type="submit" value="Send" class="btn" />
         </div>
       </div>
-      <p>All fields with "*" cannot be empty.</p>
+      <p>All fields with "<span>*</span>" cannot be empty.</p>
     </form>
   </div>
 </template>
@@ -197,7 +197,8 @@ export default {
   margin-bottom: 5px;
 }
 
-label > span {
+label > span,
+p > span {
   color: red;
 }
 
