@@ -271,3 +271,11 @@ a {
     text-align: center;
   }
 }
+
+@media screen and (max-width: 924px) {
+  #nav {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
