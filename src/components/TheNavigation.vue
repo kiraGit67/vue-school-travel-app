@@ -35,6 +35,12 @@ export default {
   color: turquoise;
 }
 
+@media screen and (max-width: 924px) {
+  #nav {
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: 767px) {
   #nav > div {
     text-align: center;
