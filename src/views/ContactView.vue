@@ -152,6 +152,16 @@ export default {
       ) {
         //alert("Your Contact Data was sent successfully.");
         msg.value = "Your Contact Data was sent successfully.";
+
+        window.firstname = firstname.value;
+        window.lastname = lastname.value;
+        window.email = email.value;
+        window.companyName = companyName.value;
+        window.chosenDestination = chosenDestination.value;
+        window.additionalNotes = additionalNotes.value;
+
+        const redirectPath = route.query.redirect || "/registration";
+        router.push(redirectPath);
       } else {
         //alert("Formular contains Errors. Please control your inserted data.");
         msg.value =
