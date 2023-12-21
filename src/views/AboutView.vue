@@ -277,8 +277,12 @@ h2 {
   content: "";
 }
 
+a {
+  font-size: normal;
+}
+
 a:hover {
-  color: turquoise;
+  _color: turquoise;
   font-size: bold;
 }
 
