@@ -44,6 +44,14 @@ const routes = [
     },
   },
   {
+    path: "/registration",
+    name: "registration",
+    components: {
+      default: () => import("@/views/RegistrationView.vue"),
+      FooterNavigation: () => import("@/components/FooterNavigation.vue"),
+    },
+  },
+  {
     path: "/protected",
     name: "protected",
     components: {
