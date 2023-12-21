@@ -46,11 +46,15 @@
       <fact-card v-for="fact in facts" :key="fact.id" :fact="fact" />
     </div>
     <div class="four-cols">
-      <destination-card
+      <router-link
         v-for="destination in destinations"
         :key="destination.id"
-        :destination="destination"
-      />
+        :to="{
+          name: 'destination.view',
+          params: { id: destination.id, slug: destination.slug },
+        }"
+        ><destination-card :destination="destination"
+      /></router-link>
     </div>
   </div>
 </template>
