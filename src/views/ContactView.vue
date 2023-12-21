@@ -24,7 +24,10 @@
             id="lastname"
             name="lastname"
             class="input"
+            :class="{ invalid: lastnameError !== '' }"
+            @blur="validateLastName"
           />
+          <span v-if="lastnameError !== ''">{{ lastnameError }}</span>
         </div>
       </div>
       <div class="form-row">
@@ -118,6 +121,14 @@ export default {
       }
     };
 
+    const validateLastName = () => {
+      if (lastname.value === "") {
+        lastnameError.value = "Lastname cannot be empty.";
+      } else {
+        lastnameError.value = "";
+      }
+    };
+
     return {
       route,
       router,
@@ -132,6 +143,7 @@ export default {
       chosenDestination,
       additionalNotes,
       validateFirstName,
+      validateLastName,
     };
   },
 };
