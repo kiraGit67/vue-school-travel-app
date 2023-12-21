@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="form">
+    <form class="form" @submit.prevent="submitForm">
       <h1>Contact Us</h1>
       <div class="form-row">
         <div class="input-wrapper">
@@ -141,6 +141,18 @@ export default {
       }
     };
 
+    const submitForm = () => {
+      if (
+        firstnameError.value === "" &&
+        lastnameError.value === "" &&
+        emailError.value === ""
+      ) {
+        alert("Your Contact Data was sent successfully.");
+      } else {
+        alert("Formular contains Errors. Please control your inserted data.");
+      }
+    };
+
     return {
       route,
       router,
@@ -157,6 +169,7 @@ export default {
       validateFirstName,
       validateLastName,
       validateEmail,
+      submitForm,
     };
   },
 };
