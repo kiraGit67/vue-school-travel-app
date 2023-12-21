@@ -1,20 +1,23 @@
 <template>
   <div>
-    <div class="form">
+    <form class="form">
       <h1>Contact Us</h1>
       <div class="form-row">
         <div class="input-wrapper">
-          <label for="firstname">Firstname</label>
+          <label for="firstname">Firstname <span>*</span></label>
           <input
             type="text"
             v-model="firstname"
             id="firstname"
             name="firstname"
             class="input"
+            :class="{ invalid: firstnameError !== '' }"
+            @blur="validateFirstName"
           />
+          <span v-if="firstnameError !== ''">{{ firstnameError }}</span>
         </div>
         <div class="input-wrapper">
-          <label for="lastname">Lastname</label>
+          <label for="lastname">Lastname <span>*</span></label>
           <input
             type="text"
             v-model="lastname"
@@ -36,7 +39,7 @@
           />
         </div>
         <div class="input-wrapper">
-          <label for="email">E-Mail</label>
+          <label for="email">E-Mail <span>*</span></label>
           <input
             type="email"
             v-model="email"
@@ -73,11 +76,11 @@
               {{ destination.name }}
             </option>
           </select>
-          <button class="btn" @click="writeMSG">Send</button>
+          <input type="submit" value="Send" class="btn" />
         </div>
       </div>
-    </div>
-    <div>{{ message }}</div>
+      <p>All fields with "*" cannot be empty.</p>
+    </form>
   </div>
 </template>
 
@@ -92,35 +95,43 @@ export default {
     const route = useRoute();
 
     const firstname = ref("");
+    const firstnameError = ref("");
+
     const lastname = ref("");
+    const lastnameError = ref("");
+
     const companyName = ref("");
+
     const email = ref("");
+    const emailError = ref("");
 
     const destinations = dataSource.destinations;
 
     const chosenDestination = ref("");
     const additionalNotes = ref("");
 
-    const message = ref("");
-
-    const writeMSG = () => {
-      message.value = ref(additionalNotes.value + " sent from " + email.value);
-      const redirectPath = route.query.redirect || "/contact";
-      router.push(redirectPath);
+    const validateFirstName = () => {
+      if (firstname.value === "") {
+        firstnameError.value = "Firstname cannot be empty.";
+      } else {
+        firstnameError.value = "";
+      }
     };
 
     return {
       route,
       router,
       firstname,
+      firstnameError,
       lastname,
+      lastnameError,
       companyName,
       email,
+      emailError,
       destinations,
       chosenDestination,
       additionalNotes,
-      message,
-      writeMSG,
+      validateFirstName,
     };
   },
 };
@@ -140,6 +151,20 @@ export default {
 .input-wrapper {
   display: flex;
   flex-direction: column;
+}
+
+.input-wrapper > span {
+  color: red;
+  margin-top: -15px;
+  margin-bottom: 5px;
+}
+
+label > span {
+  color: red;
+}
+
+.invalid {
+  border-color: red;
 }
 
 @media screen and (max-width: 767px) {
